@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Sabo",
+    "age": 20,
+    "employeeId": 1,
+    "department": "IT",
+    "salary": 20000,
+    "isReadyForRetire": null
+  },
+  {
+    "name": "Sengoku",
+    "age": 70,
+    "employeeId": 2,
+    "department": "HR",
+    "salary": 5000,
+    "isReadyForRetire": null
+  }
+]
