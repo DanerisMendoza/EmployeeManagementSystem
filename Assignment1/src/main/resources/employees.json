@@ -14,5 +14,13 @@
     "department": "HR",
     "salary": 5000,
     "isReadyForRetire": null
+  },
+  {
+    "name": "Kizaru",
+    "age": 65,
+    "employeeId": 2,
+    "department": "HR",
+    "salary": 5000,
+    "isReadyForRetire": null
   }
 ]
