@@ -26,6 +26,11 @@ public class EmployeeManagementSystem {
         checkRetirementEligibility();
         System.out.println();
         averageSalaryPerDepartment();
+        System.out.println();
+        averageAge();
+        System.out.println();
+        giveRaise();
+
     }
 
     public void checkRetirementEligibility() {
@@ -83,5 +88,36 @@ public class EmployeeManagementSystem {
         });
 
     }
+
+    public void averageAge(){
+        int sum = 0;
+        for(Employee employee : employees){
+            sum+=employee.getAge();
+        }
+        System.out.println("Average age of all employees");
+        System.out.println("Average age: "+(sum/employees.size()));
+    }
+
+    public void giveRaise() {
+        System.out.println("5% raise to all employees except those with a salary of 50k");
+
+        System.out.println("\nBefore:");
+        employees.forEach(employee ->
+                System.out.println(employee.getName() + ": " + employee.getSalary() + " PHP")
+        );
+
+        // Apply raise (modify salary)
+        employees.forEach(employee -> {
+            if (employee.getSalary() < 50000) { // Only update if salary is below 50k
+                employee.setSalary(employee.getSalary() * 1.05); // Increase by 5%
+            }
+        });
+
+        System.out.println("\nAfter:");
+        employees.forEach(employee ->
+                System.out.println(employee.getName() + ": " + employee.getSalary() + " PHP")
+        );
+    }
+
 }
 

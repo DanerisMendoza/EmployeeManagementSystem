@@ -4,7 +4,7 @@
     "age": 20,
     "employeeId": 1,
     "department": "IT",
-    "salary": 20000,
+    "salary": 49000,
     "isReadyForRetire": null
   },
   {
@@ -12,7 +12,7 @@
     "age": 70,
     "employeeId": 2,
     "department": "HR",
-    "salary": 5000,
+    "salary": 65000,
     "isReadyForRetire": null
   },
   {
@@ -20,7 +20,7 @@
     "age": 65,
     "employeeId": 2,
     "department": "HR",
-    "salary": 5000,
+    "salary": 65000,
     "isReadyForRetire": null
   }
 ]

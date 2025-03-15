@@ -15,12 +15,11 @@ public class Main {
         EmployeeManagementSystem esm = new EmployeeManagementSystem();
         esm = populateEsm(esm);
         esm.instructions();
-
     }
 
     public static EmployeeManagementSystem populateEsm(EmployeeManagementSystem esm){
         //pojo
-        Employee e1 = new Employee("luffy",1,20,"IT",20000,null);
+        Employee e1 = new Employee("luffy",1,20,"IT",35000,null);
         esm.addEmployee(e1);
 
         //java bean
@@ -29,7 +28,7 @@ public class Main {
         e2.setAge(65);
         e2.setEmployeeId(2);
         e2.setDepartment("HR");
-        e2.setSalary(5000);
+        e2.setSalary(55000);
         e2.setReadyForRetire(null);
         esm.addEmployee(e2);
 
