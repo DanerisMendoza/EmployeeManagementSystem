@@ -103,9 +103,8 @@ public class EmployeeManagementSystem {
 
         System.out.println("\nBefore:");
         employees.forEach(employee ->
-                System.out.println(employee.getName() + ": " + employee.getSalary() + " PHP")
+            System.out.printf("%s: %.2f PHP%n", employee.getName(), employee.getSalary())
         );
-
         // Apply raise (modify salary)
         employees.forEach(employee -> {
             if (employee.getSalary() < 50000) { // Only update if salary is below 50k
@@ -115,7 +114,7 @@ public class EmployeeManagementSystem {
 
         System.out.println("\nAfter:");
         employees.forEach(employee ->
-                System.out.println(employee.getName() + ": " + employee.getSalary() + " PHP")
+                System.out.printf("%s: %.2f PHP%n", employee.getName(), employee.getSalary())
         );
     }
 

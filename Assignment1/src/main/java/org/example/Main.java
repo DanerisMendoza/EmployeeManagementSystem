@@ -24,7 +24,7 @@ public class Main {
 
         //java bean
         Employee e2 = new Employee();
-        e2.setName("garp");
+        e2.setName("boa");
         e2.setAge(65);
         e2.setEmployeeId(2);
         e2.setDepartment("HR");
