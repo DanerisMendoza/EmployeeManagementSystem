@@ -1,23 +1,23 @@
 [
   {
-    "name": "garp",
+    "name": "luffy",
     "age": 20,
     "employeeId": 1,
     "department": "IT",
-    "salary": 49000,
+    "salary": 1837500,
     "isReadyForRetire": null
   },
   {
-    "name": "Sengoku",
-    "age": 70,
+    "name": "zoro",
+    "age": 65,
     "employeeId": 2,
     "department": "HR",
     "salary": 65000,
     "isReadyForRetire": null
   },
   {
-    "name": "Kizaru",
-    "age": 65,
+    "name": "nami",
+    "age": 20,
     "employeeId": 2,
     "department": "ADMIN",
     "salary": 65000,
