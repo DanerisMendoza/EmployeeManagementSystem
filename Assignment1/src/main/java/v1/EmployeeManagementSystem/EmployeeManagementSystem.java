@@ -1,8 +1,8 @@
-package EmployeeManagementSystem;
+package v1.EmployeeManagementSystem;
 
 
-import Employee.Employee;
-import Stats.Department;
+import v1.Employee;
+import v1.Stats.Department;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,13 +1,12 @@
-package EmployeeManagementSystem;
+package v2.EmployeeManagementSystem;
 
 
-import Employee.Employee;
-import Stats.Department;
+import v2.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmployeeManagementSystem2 {
+public class EmployeeManagementSystem {
     private List<Employee> employees = new ArrayList<>();
 
     public void addEmployee(Employee employee) {

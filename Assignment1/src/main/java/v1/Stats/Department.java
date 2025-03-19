@@ -1,4 +1,4 @@
-package Stats;
+package v1.Stats;
 
 public class Department {
     private String name;

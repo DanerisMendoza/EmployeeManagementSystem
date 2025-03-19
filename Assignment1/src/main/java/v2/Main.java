@@ -1,7 +1,6 @@
-package org.example;
+package v2;
 
-import Employee.Employee;
-import EmployeeManagementSystem.EmployeeManagementSystem2;
+import v2.EmployeeManagementSystem.EmployeeManagementSystem;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -12,26 +11,12 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        EmployeeManagementSystem2 esm = new EmployeeManagementSystem2();
+        EmployeeManagementSystem esm = new EmployeeManagementSystem();
         esm = populateEsm(esm);
         esm.instructions();
     }
 
-    public static EmployeeManagementSystem2 populateEsm(EmployeeManagementSystem2 esm){
-//        //pojo
-//        Employee e1 = new Employee("luffy",1,20,"IT",35000,null);
-//        esm.addEmployee(e1);
-//
-//        //java bean
-//        Employee e2 = new Employee();
-//        e2.setName("boa");
-//        e2.setAge(65);
-//        e2.setEmployeeId(2);
-//        e2.setDepartment("HR");
-//        e2.setSalary(55000);
-//        e2.setReadyForRetire(null);
-//        esm.addEmployee(e2);
-
+    public static EmployeeManagementSystem populateEsm(EmployeeManagementSystem esm){
         //populate using json
         List<Object> dummyData = readEmployeesFromJson("employees2.json");
         for (Object obj : dummyData) {
