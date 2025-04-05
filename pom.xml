@@ -7,8 +7,7 @@
   <name>assignments</name>
   <description>compilation of assignments</description>
   <modules>
-    <module>
-      Assignment1
+    <module>ESMgnment1
     </module>
   </modules>
 </project>
