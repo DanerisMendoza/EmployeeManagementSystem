@@ -5,6 +5,7 @@ import java.util.Set;
 import finalEsm.Entity.Employee;
 import finalEsm.Entity.Manager;
 import finalEsm.Service.EmployeeManagementSystem;
+import finalEsm.Service.EmployeeManagementSystem.EmployeeCollection;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,12 +15,27 @@ public class Main {
         Employee employee2 = new Manager(2, "daneris", "mendoza", "it", 1, 50000, benefits, 40000);
         esm.addEmployee(employee1);
         esm.addEmployee(employee2);
+   
+        // Display all employee
+        esm.displayAllEmployees(EmployeeCollection.list);
+        
+        // Find employee with id 3
+        int searchId = 2;
+
         try {
-            int searchId = 3;
             System.out.println("\nSearch id: "+searchId+ esm.getEmployee(searchId));
         } catch (Exception e) {
             System.out.println("\nCaught an exception: " + e.getMessage());
         }
-        esm.displayAllEmployees();
+        
+        try {
+            esm.removeEmployee(searchId);
+        } catch (Exception e) {
+            System.out.println("\nCaught an exception: " + e.getMessage());
+        }
+
+        // After employee removal
+        System.out.println("\nAfter Employee Removal: ");
+        esm.displayAllEmployees(EmployeeCollection.list);
     }
 }

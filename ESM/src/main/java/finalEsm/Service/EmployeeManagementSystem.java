@@ -24,6 +24,42 @@ public class EmployeeManagementSystem {
         employees3.add(employee);
     }
 
+    public enum EmployeeCollection {
+        map,
+        set,
+        list
+    }
+
+    public void displayAllEmployees(EmployeeCollection ec) {
+        switch (ec) {
+            case map:
+                System.out.println("Employees1 : Map");
+                for (Map.Entry<Integer, Employee> employee : employees1.entrySet()) {
+                    System.out.println(employee);
+                }
+                break;
+            case set:
+                System.out.println("Employees1 : Set");
+                for (Employee employee : employees2) {
+                    System.out.println(employee);
+                }
+                break;
+            case list:
+                System.out.println("Employees3 : ArrayList");
+                for (Employee employee : employees3) {
+                    System.out.println(employee);
+                }
+                break;
+            default:
+                System.out.println("Unknown collection type");
+                break;
+        }
+    }
+
+    public void calculateTotalPayroll(){
+        
+    }
+    
     public Employee getEmployee(int id) throws EmployeeNotFoundException {
         for (Employee employee : employees2) {
             if (employee.getId() == id) {
@@ -33,10 +69,11 @@ public class EmployeeManagementSystem {
         throw new EmployeeNotFoundException("Employee with ID " + id + " not found.");
     }
 
-    public void displayAllEmployees() {
-        for (Employee employee : employees3) {
-            System.out.println(employee);
-        }
+    public void removeEmployee(int employeeId) throws EmployeeNotFoundException {
+        Employee employee = getEmployee(employeeId);
+        employees1.remove(employeeId);
+        employees2.remove(employee);
+        employees3.remove(employee);
     }
 
 }
