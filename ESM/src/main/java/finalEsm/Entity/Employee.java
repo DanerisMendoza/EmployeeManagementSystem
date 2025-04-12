@@ -37,4 +37,8 @@ public abstract class Employee {
                 " }";
     }
 
+    public double calculateTotalCompensation(){
+        return salary;
+    }
+
 }

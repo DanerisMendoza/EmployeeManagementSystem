@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 import finalEsm.Entity.Employee;
+import finalEsm.Exception.DuplicateEmployeeException;
 import finalEsm.Exception.EmployeeNotFoundException;
 
 public class EmployeeManagementSystem {
@@ -18,12 +19,6 @@ public class EmployeeManagementSystem {
     // to maintain the order of employee addition.
     private List<Employee> employees3 = new ArrayList<>();
 
-    public void addEmployee(Employee employee) {
-        employees1.put(employee.getId(), employee);
-        employees2.add(employee);
-        employees3.add(employee);
-    }
-
     public enum EmployeeCollection {
         map,
         set,
@@ -33,19 +28,19 @@ public class EmployeeManagementSystem {
     public void displayAllEmployees(EmployeeCollection ec) {
         switch (ec) {
             case map:
-                System.out.println("Employees1 : Map");
+                System.out.print("Employees1 : Map");
                 for (Map.Entry<Integer, Employee> employee : employees1.entrySet()) {
-                    System.out.println(employee);
+                    System.out.println("\n"+employee);
                 }
                 break;
             case set:
-                System.out.println("Employees1 : Set");
+                System.out.print("Employees1 : Set");
                 for (Employee employee : employees2) {
                     System.out.println(employee);
                 }
                 break;
             case list:
-                System.out.println("Employees3 : ArrayList");
+                System.out.print("Employees3 : ArrayList");
                 for (Employee employee : employees3) {
                     System.out.println(employee);
                 }
@@ -60,6 +55,16 @@ public class EmployeeManagementSystem {
         
     }
     
+    public void addEmployee(Employee employee) throws DuplicateEmployeeException{
+        if (employees1.containsKey(employee.getId()) || employees2.contains(employee) || employees3.contains(employee)){
+            throw new DuplicateEmployeeException("Employee with ID "+employee.getId()+" Already Exist");
+        }
+
+        employees1.put(employee.getId(), employee);
+        employees2.add(employee);
+        employees3.add(employee);
+    }
+
     public Employee getEmployee(int id) throws EmployeeNotFoundException {
         for (Employee employee : employees2) {
             if (employee.getId() == id) {
