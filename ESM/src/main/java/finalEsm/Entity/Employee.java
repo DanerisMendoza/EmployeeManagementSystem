@@ -28,17 +28,28 @@ public abstract class Employee {
         return id;
     }
 
+    public double getSalary() {
+        return salary;
+    }
+    
+    public double getBonus() {
+        return bonus;
+    }
+    
+    public double getYearOfServices() {
+        return yearOfServices;
+    }
+
     @Override
     public String toString() {
         return "\n{ " +
                 "ID: " + id + ", " +
                 "Name: " + firstName + " " + lastName + ", " +
-                "Department: " + department +
+                "Department: " + department + ", " +
+                "Total Compensation: " + calculateTotalCompensation() +
                 " }";
     }
 
-    public double calculateTotalCompensation(){
-        return salary;
-    }
+    public abstract double calculateTotalCompensation();
 
 }

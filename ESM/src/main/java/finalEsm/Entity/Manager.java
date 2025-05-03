@@ -9,4 +9,7 @@ public class Manager extends Employee {
         super(id, firstName, lastName, department, yearOfServices, salary, benefits, bonus);
     }
 
+    public double calculateTotalCompensation(){
+        return getSalary() + getBonus() + 500;
+    }
 }

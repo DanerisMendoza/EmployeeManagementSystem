@@ -26,11 +26,10 @@ public class Main {
         }
    
         // Display all employee
-        esm.displayAllEmployees(EmployeeCollection.map);
+        esm.displayAllEmployees(EmployeeCollection.list);
         
         // Find employee by id
         int searchId = 2;
-
         try {
             System.out.println("\nSearch id: "+searchId+ esm.getEmployee(searchId));
         } catch (EmployeeNotFoundException e) {
@@ -38,14 +37,18 @@ public class Main {
         }
         
         // Remove employee by id
-        try {
-            esm.removeEmployee(searchId);
-        } catch (EmployeeNotFoundException e) {
-            System.out.println("\nCaught an exception: " + e.getMessage());
-        }
+        // try {
+        //     esm.removeEmployee(searchId);
+        // } catch (EmployeeNotFoundException e) {
+        //     System.out.println("\nCaught an exception: " + e.getMessage());
+        // }
 
         // After employee removal
         System.out.println("\nAfter Employee Removal: ");
         esm.displayAllEmployees(EmployeeCollection.list);
+        
+        // Calculate Total Payroll
+        System.out.println("\nCalculate Total Payroll: ");
+        esm.calculateTotalPayroll(EmployeeCollection.list);
     }
 }

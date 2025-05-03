@@ -51,10 +51,45 @@ public class EmployeeManagementSystem {
         }
     }
 
-    public void calculateTotalPayroll(){
-        
-    }
+    public void calculateTotalPayroll(EmployeeCollection ec) {
+        switch (ec) {
+            case map:
+                System.out.println("Employees1 : Map");
+                double totalMap = 0;
+                for (Map.Entry<Integer, Employee> entry : employees1.entrySet()) {
+                    double compensation = entry.getValue().calculateTotalCompensation();
+                    System.out.println("Employee ID " + entry.getKey() + " - Compensation: " + compensation);
+                    totalMap += compensation;
+                }
+                System.out.println("Total Payroll: " + totalMap + " php");
+                break;
     
+            case set:
+                System.out.println("Employees2 : Set");
+                double totalSet = 0;
+                for (Employee employee : employees2) {
+                    double compensation = employee.calculateTotalCompensation();
+                    System.out.println("Employee: " + employee + " - Compensation: " + compensation);
+                    totalSet += compensation;
+                }
+                System.out.println("Total Payroll: " + totalSet + " php");
+                break;
+    
+            case list:
+                System.out.println("Employees3 : ArrayList");
+                double totalList = 0;
+                for (Employee employee : employees3) {
+                    totalList += employee.calculateTotalCompensation();                
+                }
+                System.out.println("Total Payroll: " + totalList + " php");
+                break;
+    
+            default:
+                System.out.println("Unknown collection type");
+                break;
+        }
+    }
+
     public void addEmployee(Employee employee) throws DuplicateEmployeeException{
         if (employees1.containsKey(employee.getId()) || employees2.contains(employee) || employees3.contains(employee)){
             throw new DuplicateEmployeeException("Employee with ID "+employee.getId()+" Already Exist");
