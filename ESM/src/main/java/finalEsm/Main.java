@@ -1,5 +1,6 @@
 package finalEsm;
 
+import java.io.IOException;
 import java.util.Set;
 
 import finalEsm.Entity.Employee;
@@ -8,6 +9,7 @@ import finalEsm.Exception.DuplicateEmployeeException;
 import finalEsm.Exception.EmployeeNotFoundException;
 import finalEsm.Service.EmployeeManagementSystem;
 import finalEsm.Service.EmployeeManagementSystem.EmployeeCollection;
+import finalEsm.Loader.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,7 +26,14 @@ public class Main {
         } catch (DuplicateEmployeeException e) {
             System.out.println("\nCaught an exception: " + e.getMessage());
         }
-   
+            
+        // seeder
+        try {
+            Loader.loadFromExcel("employees.xlsx", esm);    
+        } catch (IOException e) {
+            System.out.println("Failed to load employees from Excel: " + e.getMessage());
+        }
+
         // Display all employee
         esm.displayAllEmployees(EmployeeCollection.list);
         
@@ -37,11 +46,11 @@ public class Main {
         }
         
         // Remove employee by id
-        // try {
-        //     esm.removeEmployee(searchId);
-        // } catch (EmployeeNotFoundException e) {
-        //     System.out.println("\nCaught an exception: " + e.getMessage());
-        // }
+        try {
+            esm.removeEmployee(searchId);
+        } catch (EmployeeNotFoundException e) {
+            System.out.println("\nCaught an exception: " + e.getMessage());
+        }
 
         // After employee removal
         System.out.println("\nAfter Employee Removal: ");
