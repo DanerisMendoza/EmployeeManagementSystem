@@ -40,6 +40,22 @@ public abstract class Employee {
         return yearOfServices;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public Set<String> getBenefits() {
+        return benefits;
+    }
+
     @Override
     public String toString() {
         return "\n{ " +

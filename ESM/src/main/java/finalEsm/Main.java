@@ -1,6 +1,7 @@
 package finalEsm;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.Set;
 
 import finalEsm.Entity.Employee;
@@ -10,6 +11,7 @@ import finalEsm.Exception.EmployeeNotFoundException;
 import finalEsm.Service.EmployeeManagementSystem;
 import finalEsm.Service.EmployeeManagementSystem.EmployeeCollection;
 import finalEsm.Loader.*;
+import finalEsm.ExcelSaver.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -59,5 +61,8 @@ public class Main {
         // Calculate Total Payroll
         System.out.println("\nCalculate Total Payroll: ");
         esm.calculateTotalPayroll(EmployeeCollection.list);
+
+        // save excel
+        ExcelSaver.saveToExcel("ESM/src/main/resources/employees2.xlsx", esm);
     }
 }

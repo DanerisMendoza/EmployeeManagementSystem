@@ -1,11 +1,6 @@
 package finalEsm.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import finalEsm.Entity.Employee;
 import finalEsm.Exception.DuplicateEmployeeException;
@@ -107,6 +102,23 @@ public class EmployeeManagementSystem {
             }
         }
         throw new EmployeeNotFoundException("Employee with ID " + id + " not found.");
+    }
+
+    public Collection<Employee> getAllEmployee(EmployeeCollection ec) {
+        switch (ec) {
+            case map:
+                System.out.println("Employees1 : Map");
+                return employees1.values(); // returns Collection<Employee>
+            case set:
+                System.out.println("Employees2 : Set");
+                return employees2;
+            case list:
+                System.out.println("Employees3 : ArrayList");
+                return employees3;
+            default:
+                System.out.println("Unknown collection type");
+                return new ArrayList<>(); // return empty list as fallback
+        }
     }
 
     public void removeEmployee(int employeeId) throws EmployeeNotFoundException {
